@@ -11,21 +11,21 @@ phases:
       - echo build start on 'date'
       - mvn clean
       - mvn validate
-      - echo build ends on 'date'
+      - echo Build ends on 'date'
   build:
     on-failure: ABORT
     commands:
-    - echo build start on 'date'
+    - echo Build start on 'date'
     - mvn compile
     - mvn test
-    - echo build end on 'date'
+    - echo Build ends on 'date'
   post_build:
     on-failure: ABORT
     commands:
-    - echo build start on 'date'
+    - echo Build start on 'date'
     - mvn package
     - mv target/*.jar ROOT.jar
-    - echo buil end on 'date'
+    - echo Build ends on 'date'
 
 artifacts:
   files:
