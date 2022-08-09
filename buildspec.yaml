@@ -24,12 +24,6 @@ phases:
     commands:
     - echo Build start on 'date'
     - mvn package
-    - mv target/*.jar ROOT.jar
-    - echo Buil ends on 'date'
     - echo Build ends on 'date'
 
 
-artifacts:
-  files:
-    - ROOT.jar
-  name: hello-world-artifact
