@@ -1,0 +1,15 @@
+{
+ "name": "4-contnuous-deployment",
+ "version": "1.0.0",
+ "description": "",
+ "main": "index.js"
+ "scripts": {
+  "test": "echo \"Error: no test specifaction\" && exit 1"
+   },
+ "keywords": [], 
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+    "express": "^4.17.1"
+ }
+}
