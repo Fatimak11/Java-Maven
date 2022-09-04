@@ -11,7 +11,7 @@ pipeline {
         ARTIFACT_NAME = "helloworld.jar"
         AWS_EB_APP_NAME = "Java-app"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT = "Javaapp-env"
+        AWS_EB_ENVIRONMENT = "Javaapp-env-1"
         
        
     }
