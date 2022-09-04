@@ -4,18 +4,16 @@ pipeline {
     environment {
 
         
-        AWS_ACCESS_KEY_ID     = credentials('Fatimah-K-aws-secret-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('Fatimah-K-aws-secret-access-key')
+        AWS_ACCESS_KEY_ID     = credentials('Access-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('Secret-access-key')
 
-        AWS_S3_BUCKET = "fatimah-k-belt2d2-artifacts-123456"
+        AWS_S3_BUCKET = "fatima-s3-artifact"
         ARTIFACT_NAME = "helloworld.jar"
         AWS_EB_APP_NAME = "Java-app"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "Javaapp-env"
         
-        SONAR_IP_HOST= "52.23.193.18"
-        SONAR_TOKEN= "sqp_720d4c38a844e40d68d70b4206a4bd13f6de9b8f"
-
+       
     }
 
     stages {
@@ -37,20 +35,7 @@ pipeline {
             }
         }
         
-        stage('Qualty Scan') {
-            steps{
-
-                sh '''
-                  
-                mvn clean verify sonar:sonar \
-                   -Dsonar.projectKey=online-Fatimah-K-B2D2 \
-                   -Dsonar.host.url=http://$SONAR_IP_HOST \
-                   -Dsonar.login=$SONAR_TOKEN
-                '''
-
-            }
-
-        }
+       
         
         stage('Package') {
             steps {
